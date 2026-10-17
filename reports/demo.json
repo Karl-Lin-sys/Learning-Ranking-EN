@@ -1,0 +1,148 @@
+{
+  "synthetic_only": true,
+  "seed": 7,
+  "python": "3.12.14",
+  "torch": "2.14.1+cpu",
+  "device": "cpu",
+  "threads": 1,
+  "split_sizes": [
+    220,
+    70,
+    70
+  ],
+  "validation": {
+    "pointwise": {
+      "queries": 70,
+      "no_relevant_queries": 0,
+      "ndcg": 0.9630795914669295,
+      "mrr": 1.0,
+      "recall": 0.6987894248608535,
+      "epochs": 19,
+      "best_validation_loss": 0.23878146708011627
+    },
+    "pairwise": {
+      "queries": 70,
+      "no_relevant_queries": 0,
+      "ndcg": 0.9630246900036266,
+      "mrr": 1.0,
+      "recall": 0.7005751391465678,
+      "epochs": 35,
+      "best_validation_loss": 0.10307789593935013
+    },
+    "listwise": {
+      "queries": 70,
+      "no_relevant_queries": 0,
+      "ndcg": 0.9647915392671963,
+      "mrr": 1.0,
+      "recall": 0.6952179962894248,
+      "epochs": 30,
+      "best_validation_loss": 1.873254656791687
+    }
+  },
+  "selected_on_validation": "listwise",
+  "test_selected": {
+    "queries": 70,
+    "no_relevant_queries": 0,
+    "ndcg": 0.9552080857741545,
+    "mrr": 1.0,
+    "recall": 0.7050819418676562
+  },
+  "test_baseline_feature0": {
+    "queries": 70,
+    "no_relevant_queries": 0,
+    "ndcg": 0.7740236454293317,
+    "mrr": 0.9642857142857143,
+    "recall": 0.6156318284889714
+  },
+  "test_slices": {
+    "head": {
+      "queries": 53,
+      "no_relevant_queries": 0,
+      "ndcg": 0.949243366739426,
+      "mrr": 1.0,
+      "recall": 0.7119006779384138
+    },
+    "tail": {
+      "queries": 17,
+      "no_relevant_queries": 0,
+      "ndcg": 0.9738039745294844,
+      "mrr": 1.0,
+      "recall": 0.6838235294117647
+    }
+  },
+  "paired_bootstrap": {
+    "mean_delta": 0.18118444034482278,
+    "ci95": [
+      0.14144597084876245,
+      0.22055852396505282
+    ]
+  },
+  "bias_simulation": {
+    "known_true_relevance": 0.3,
+    "raw_ctr": 0.1717,
+    "ips": 0.2961,
+    "ess": 7129.571237089017,
+    "clipped_fraction": 0.0
+  },
+  "ab_null_simulation": {
+    "n_A": 487,
+    "n_B": 513,
+    "cvr_A": 0.11088295687885011,
+    "cvr_B": 0.11500974658869395,
+    "absolute_delta": 0.004126789709843842,
+    "ci95": [
+      -0.03496363541754226,
+      0.04352942589190292
+    ],
+    "srm_p_approx": 0.4109675220883361,
+    "caution": "Fixed horizon only; no significance claim for repeated peeking or sparse all-zero data."
+  },
+  "monitor_example": {
+    "requests": 100,
+    "zero_result_rate": 0.0,
+    "error_rate": 0.0,
+    "p95_ms": 0.3684000112116337
+  },
+  "retrieval_example": {
+    "synthetic": true,
+    "lexical": [
+      "p1",
+      "p2"
+    ],
+    "dense": [
+      "p5",
+      "p1",
+      "p2"
+    ],
+    "candidates": [
+      "p1",
+      "p2",
+      "p5"
+    ],
+    "results": [
+      "p1",
+      "p5",
+      "p2"
+    ],
+    "model_reranked": true,
+    "note": "hand-authored vectors; no pretrained semantic encoder"
+  },
+  "retrieval_qrels_example": {
+    "ndcg": 1.0,
+    "mrr": 1.0,
+    "recall": 1.0,
+    "has_relevant": true,
+    "zero_results": false
+  },
+  "latency_ms_6_products_local_sequential": {
+    "p50": 0.2695500079425983,
+    "p95": 0.3684000112116337,
+    "p99": 0.44380000326782465
+  },
+  "limitations": [
+    "No real traffic, business uplift, pretrained model, or ANN benchmark.",
+    "Synthetic training and search features differ; search integration is plumbing only.",
+    "One seed; bootstrap interval is conditional on the trained model.",
+    "No evidence of production throughput or absence of memory leaks."
+  ]
+}

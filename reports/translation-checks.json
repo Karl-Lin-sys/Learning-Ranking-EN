@@ -1,0 +1,12 @@
+{
+  "edition": "Canadian English",
+  "source_commit": "644c02ab97da4c3c61ce97059d395d56205fcba3",
+  "tests_passed": 18,
+  "code_and_fixtures_byte_identical": true,
+  "relative_markdown_links_valid": true,
+  "no_untranslated_prose": true,
+  "demo_results_match_except_timing": true,
+  "fixture_language": "Traditional Chinese, intentionally retained",
+  "test_output": "test_health_and_search (test_pipeline.ApiTests.test_health_and_search) ... ok\ntest_malformed_and_oversize (test_pipeline.ApiTests.test_malformed_and_oversize) ... ok\ntest_bootstrap_and_assignment (test_pipeline.IntegrityTests.test_bootstrap_and_assignment) ... ok\ntest_future_features_and_duplicates (test_pipeline.IntegrityTests.test_future_features_and_duplicates) ... ok\ntest_immature_labels (test_pipeline.IntegrityTests.test_immature_labels) ... ok\ntest_ips_known_example_and_support (test_pipeline.IntegrityTests.test_ips_known_example_and_support) ... ok\ntest_time_split (test_pipeline.IntegrityTests.test_time_split) ... ok\ntest_losses_prefer_correct_order (test_pipeline.ModelTests.test_losses_prefer_correct_order) ... ok\ntest_no_pairs_zero_gradient (test_pipeline.ModelTests.test_no_pairs_zero_gradient) ... ok\ntest_training_and_inference (test_pipeline.ModelTests.test_training_and_inference) ... ok\ntest_ab_balanced_and_duplicate (test_pipeline.OperationsTests.test_ab_balanced_and_duplicate) ... ok\ntest_monitor (test_pipeline.OperationsTests.test_monitor) ... ok\ntest_empty_lexical (test_pipeline.RetrievalTests.test_empty_lexical) ... ok\ntest_hard_filters (test_pipeline.RetrievalTests.test_hard_filters) ... ok\ntest_metrics_pool_denominator (test_pipeline.RetrievalTests.test_metrics_pool_denominator) ... ok\ntest_reject_unjudged_and_duplicates (test_pipeline.RetrievalTests.test_reject_unjudged_and_duplicates) ... ok\ntest_rrf_deduplicates_routes (test_pipeline.RetrievalTests.test_rrf_deduplicates_routes) ... ok\ntest_vector_invalid (test_pipeline.RetrievalTests.test_vector_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 18 tests in 5.210s\n\nOK\n",
+  "scope": "Local checks only; not a GitHub Actions result or a new source verification."
+}
