@@ -8,17 +8,53 @@ This Canadian English edition translates [Learning-Ranking](https://github.com/K
 
 ## Quick start
 
-Use Python 3.12 and a CPU. Create and activate a virtual environment:
+Use Python 3.12 and a CPU. Run commands from the repository folder containing
+`requirements.txt`, `constraints-tested.txt`, `tests`, and `travel_rank`.
+Running from your home folder will produce missing-file or missing-module errors.
+
+### Windows PowerShell
+
+For a new checkout, first run:
+
+```powershell
+git clone https://github.com/Karl-Lin-sys/Learning-Ranking-EN.git
+Set-Location .\Learning-Ranking-EN
+```
+
+If you already have a checkout or extracted ZIP, use `Set-Location` with that
+folder's actual path instead. Do not clone into an existing checkout.
+Then run these commands one at a time, stopping if a command fails:
+
+```powershell
+Get-Item .\requirements.txt, .\constraints-tested.txt, .\tests, .\travel_rank
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt -c constraints-tested.txt
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+.\.venv\Scripts\python.exe -m travel_rank.demo
+.\.venv\Scripts\python.exe -m travel_rank.api
+```
+
+These commands call the virtual environment's Python directly. Activation and
+changes to PowerShell execution policy are unnecessary. Lines beginning with
+`#` are comments and do not activate anything.
+
+### macOS / Linux
+
+For a new checkout:
 
 ```sh
-python -m venv .venv
-# Windows PowerShell: .\.venv\Scripts\Activate.ps1
-# macOS/Linux: source .venv/bin/activate
-python -m pip install -r requirements.txt -c constraints-tested.txt
-python -m unittest discover -s tests -v
-python -m travel_rank.demo
-python -m travel_rank.api
+git clone https://github.com/Karl-Lin-sys/Learning-Ranking-EN.git
+cd Learning-Ranking-EN
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt -c constraints-tested.txt
+.venv/bin/python -m unittest discover -s tests -v
+.venv/bin/python -m travel_rank.demo
+.venv/bin/python -m travel_rank.api
 ```
+
+For an existing checkout, first change to its folder and skip cloning.
+The API stays running in the terminal; press **Ctrl+C** to stop it. In another
+PowerShell window, check it with `Invoke-RestMethod http://127.0.0.1:8000/health`.
 
 Training and evaluation results are written to `reports/demo.json`. The API binds only to `127.0.0.1:8000`. In another terminal:
 
